@@ -1,7 +1,15 @@
 elasticsearch:
-    image: dockerfile/elasticsearch
+    image: elasticsearch
     volumes:
         - elasticsearch:/data
     ports:
         - "9200:9200"
         - "9300:9300"
+logstash:
+    image: logstash
+    links:
+        - elasticsearch:elasticsearch
+    ports:
+        - "5000:5000"
+        - "5000:5000/udp"
+    command: -f /etc/logstash.sample.conf
