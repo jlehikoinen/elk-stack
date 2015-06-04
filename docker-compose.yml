@@ -13,3 +13,7 @@ logstash:
         - "5000:5000"
         - "5000:5000/udp"
     command: -f /etc/logstash.conf
+kibana:
+    image: jlehikoinen/kibana
+    ports:
+        - "80:80"

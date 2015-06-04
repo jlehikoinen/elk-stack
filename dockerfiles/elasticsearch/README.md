@@ -1,5 +1,5 @@
 ElasticSearch
 =============
 
-Base image: dockerfile/java:oracle-java7
+Base image: debian:jessie
 Version: 1.4.0
